@@ -91,7 +91,6 @@ const BuscarMonstros = (req, res) => {
 
 const CriarMonstro = (req, res) => {    
     const main = async () => {
-        // if(req.dados.belongsTo !== "USER") return res.status(403).send({message: "Permissão negada"})
 
         const {name, description, image} = req.body
         try{
@@ -148,7 +147,6 @@ const ModificarMonstro = async (req, res) => {
 
 const DeletarMonstro = (req, res) => {
     const main = async () => {
-        if(req.dados.belongsTo !== "USER") return res.status(403).send({message: "Permissão negada"})
 
         const id = req.params.id
 

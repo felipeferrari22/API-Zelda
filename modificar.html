@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Importação de Arquivos de Estilo (CSS) -->
+    <link rel="stylesheet" href="criar.css">
+    <!-- Importação de Arquivos de Script (JS) -->
+    <script defer src="./modificar.js"></script>
+    <script defer src="./cabecalho.js"></script>
+    <!-- Tela de Login do Painel Administrativo -->
+    <title>Modificar Monstro • API Zelda</title>
+    <button id="botao-logout">
+        <img src="./logout.svg" alt="X">
+        Logout
+    </button>
+    <div id="container-menu">
+      <!--Botão de abrir menu-->
+      <button id="botao-abrir-menu">
+        <img src="./menu.svg" alt="Menu" />
+      </button>
+    
+      <!--Menu aberto-->
+      <nav id="menu-navegacao" style="display: none">
+        <button id="botao-fechar-menu">
+          <img src="./chevron-cima.svg" alt="Fechar" />
+        </button>
+        <a href="./monsters.html">Monstros</a>
+        <a href="./criar.html">Criar Monstro</a>
+        <a class="link-atual">Modificar Monstro</a>
+        <a href="./deletar.html">Deletar Monstro</a>
+      </nav>
+    </div>
+    </head>
+<body>
+    <!-- Cabeçalho da Página -->
+    <header>Modificar Monstro</header>
+    <section id="section">
+        <!-- Cabeçalho do Modal -->
+        <form>
+            <!-- Input: Nome -->
+            <label for="nome-criar-monstro">Novo Nome</label>
+            <input id="nome-criar-monstro" type="text" min="1">
+            
+            <!-- Input: Descrição -->
+            <label for="descricao-criar-monstro">Nova Descrição</label>
+            <input id="descricao-criar-monstro" type="text" min="1">
+
+            <!-- Input: Imagem -->
+            <label for="imagem-criar-monstro">URL da nova imagem</label>
+            <input id="imagem-criar-monstro" type="text" min="1">
+            
+            <!-- Botão de Criar conta -->
+            <button type="button" id="botao-criar-monstro" disabled>Modificar</button>
+        </form>
+</section>
+</body>
+</html>

@@ -10,6 +10,6 @@ routes.post('/Login', Login)
 routes.get('/BuscarMonstros/', BuscarMonstros)
 routes.post('/CriarMonstro', CriarMonstro)
 routes.put('/ModificarMonstro/:id', AuthTokenAcesso, ModificarMonstro)
-routes.delete('/DeletarMonstro/:id', AuthTokenAcesso, DeletarMonstro)
+routes.delete('/DeletarMonstro/:id', DeletarMonstro)
 
 module.exports = routes;

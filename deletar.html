@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Importação de Arquivos de Estilo (CSS) -->
+    <link rel="stylesheet" href="criar.css">
+    <!-- Importação de Arquivos de Script (JS) -->
+    <script defer src="./deletar.js"></script>
+    <script defer src="./cabecalho.js"></script>
+    <!-- Tela de Login do Painel Administrativo -->
+    <title>Deletar Monstro • API Zelda</title>
+    <button id="botao-logout">
+        <img src="./logout.svg" alt="X">
+        Logout
+    </button>
+    <div id="container-menu">
+      <!--Botão de abrir menu-->
+      <button id="botao-abrir-menu">
+        <img src="./menu.svg" alt="Menu" />
+      </button>
+    
+      <!--Menu aberto-->
+      <nav id="menu-navegacao" style="display: none">
+        <button id="botao-fechar-menu">
+          <img src="./chevron-cima.svg" alt="Fechar" />
+        </button>
+        <a href="./monsters.html">Monstros</a>
+        <a href="./criar.html">Criar Monstro</a>
+        <a href="./modificar.html">Modificar Monstro</a>
+        <a class="link-atual">Deletar Monstro</a>
+      </nav>
+    </div>
+    </head>
+<body>
+    <!-- Cabeçalho da Página -->
+    <header>Deletar Monstro</header>
+    <section id="section">
+        <form>
+            <!-- Input: ID do Monstro -->
+            <label for="id-deletar-monstro">ID do Monstro</label>
+            <input id="id-deletar-monstro" type="number" min="1">
+            
+            <!-- Botão de Deletar monstro -->
+            <button type="button" id="botao-deletar-monstro" disabled>Deletar</button>
+        </form>
+</section>
+</body>
+</html>

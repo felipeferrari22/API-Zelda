@@ -77,5 +77,5 @@ document.getElementById("botao-login").addEventListener("click", () => {
 })
 
 document.getElementById("ir-para-cadastro").addEventListener("click", () => {
-    window.location.href = "../cadastro.html"
+    window.location.href = "./cadastro.html"
 })

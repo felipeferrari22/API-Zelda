@@ -54,5 +54,5 @@ const criarConta = (inputs, email, senha) => {
 }
 
 document.getElementById("ir-para-login").addEventListener("click", () => {
-    window.location.href = "../index.html"
+    window.location.href = "./index.html"
 })

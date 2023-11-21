@@ -3,12 +3,34 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>API Zelda</title>
-  <link rel="stylesheet" type="text/css" href="style.css">
+  <title>Monstros • API Zelda</title>
+  <link rel="stylesheet" href="./monsters.css">
+  <button id="botao-logout">
+    <img src="./logout.svg" alt="X">
+    Logout
+</button>
+<div id="container-menu">
+  <!--Botão de abrir menu-->
+  <button id="botao-abrir-menu">
+    <img src="./menu.svg" alt="Menu" />
+  </button>
+
+  <!--Menu aberto-->
+  <nav id="menu-navegacao" style="display: none">
+    <button id="botao-fechar-menu">
+      <img src="./chevron-cima.svg" alt="Fechar" />
+    </button>
+    <a class="link-atual">Monstros</a>
+    <a href="./criar.html">Criar Monstro</a>
+    <a href="./modificar.html">Modificar Monstro</a>
+    <a href="./deletar.html">Deletar Monstro</a>
+  </nav>
+</div>
 </head>
+
 <body>
   <div class="header">
-    <h1>MONSTERS</h1>
+    <h1>MONSTROS</h1>
   </div>
 
   <div class="cards">
@@ -16,8 +38,9 @@
 
 </body>
 
-<link href="/bootsrap/css/bootstrap.min.css" rel="stylesheet">
-<script src="/bootsrap/js/bootstrap.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-<script src="requisicao-api.js"></script>
+<link href="./bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<script defer src="./bootstrap/js/bootstrap.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script defer src="./monsters.js"></script>
+<script defer src="./cabecalho.js"></script>
 </html>

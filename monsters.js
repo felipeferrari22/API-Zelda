@@ -1,6 +1,4 @@
-// URL da API
-
-apiUrl = "https://botw-compendium.herokuapp.com/api/v2/category/monsters"
+apiUrl = "http://localhost:3000/BuscarMonstros"
 
 let monsterData = [];
 
@@ -8,11 +6,11 @@ let monsterData = [];
 function getMonsterData() {
   axios.get(apiUrl)
     .then(response => {
-      monsterData = response.data.data;
+      monsterData = response.data.monsters;
       
       // Exibir informações sobre os monstros
-      monsterData.forEach(monster => {
-        console.log(monster);
+      monsterData.forEach(monsters => {
+        console.log(monsters);
       });
 
       renderDataInHTML();
@@ -52,22 +50,6 @@ function renderDataInHTML(){
     cardBody.appendChild(description);
 
     card.appendChild(cardBody);
-
-    // const listGroup = document.createElement("ul");
-    // listGroup.className = "list-group list-group-flush";
-
-    // const locationItem = document.createElement("li");
-    // locationItem.className = "list-group-item";
-    // locationItem.textContent = "Location";
-
-    // const propertiesItem = document.createElement("li");
-    // propertiesItem.className = "list-group-item";
-    // propertiesItem.textContent = "Properties";
-
-    // listGroup.appendChild(locationItem);
-    // listGroup.appendChild(propertiesItem);
-
-    // card.appendChild(listGroup);
 
     cards.appendChild(card);
   })

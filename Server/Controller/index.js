@@ -46,7 +46,6 @@ const Login = async (req, res) => {
         if(await AuthPwd(user.senha, senha)) {
             const dados = {
                 email: user.email,                    
-                nome: user.nome,
                 id: user.id,
                 belongsTo: "USER"
             }
@@ -70,7 +69,7 @@ main()
 
 const BuscarMonstros = (req, res) => {
     const main = async () => {
-        if(req.dados.belongsTo !== "USER") return res.status(403).send({message: "Permissão negada"})
+        // if(req.dados.belongsTo !== "USER") return res.status(403).send({message: "Permissão negada"})
 
         const monster = await prisma.monster.findMany()
 
@@ -92,7 +91,7 @@ const BuscarMonstros = (req, res) => {
 
 const CriarMonstro = (req, res) => {    
     const main = async () => {
-        if(req.dados.belongsTo !== "USER") return res.status(403).send({message: "Permissão negada"})
+        // if(req.dados.belongsTo !== "USER") return res.status(403).send({message: "Permissão negada"})
 
         const {name, description, image} = req.body
         try{
@@ -119,11 +118,66 @@ const CriarMonstro = (req, res) => {
         .finally(async ()=>{await prisma.$disconnect()})
 }
 
+const ModificarMonstro = async (req, res) => {
+    const main = async () => {
+        if (req.dados.belongsTo !== "USER") {
+            return res.status(403).send({ message: "Permissão negada" });
+        }
+
+        const id = req.params.id
+        const { name, description, image } = req.body;
+
+        const monstro = await prisma.monster.update({
+            where: {
+                id: parseInt(id),
+            },
+            data: {
+              name: name,
+              description: description,
+              image: image
+            },
+          })
+        if (monstro === null) return res.status(404).send({ message: "Monstro não encontrado" });
+        return res.status(200).send({ message: "Monstro modificado com sucesso" });
+    }
+     
+    main()
+        .catch((err)=>{res.status(400).send({message: "Erro na modificação do monstro", error: err})})
+        .finally(async ()=>{await prisma.$disconnect()})
+}
+
+const DeletarMonstro = (req, res) => {
+    const main = async () => {
+        if(req.dados.belongsTo !== "USER") return res.status(403).send({message: "Permissão negada"})
+
+        const id = req.params.id
+
+        // Busca o monstro via ID
+        const monstro = await prisma.monster.findUnique({
+            where: {
+                id: parseInt(id),
+            },
+        })
+        if(monstro === null) return res.status(404).send({message: "Monstro não encontrado"})
+
+        await prisma.monster.delete({
+            where: {id: parseInt(id)}
+        })
+        return res.status(200).send({message: "Monstro removido com sucesso"})
+    }
+
+    main()
+        .catch((err)=>{res.status(400).send({message: "Erro na remoção do monstro", error: err})})
+        .finally(async ()=>{await prisma.$disconnect()})
+}
+
 module.exports = {
     Cadastro,
     Login,
     BuscarMonstros,
     CriarMonstro,
+    ModificarMonstro,
+    DeletarMonstro,
     authJWT(req, res){
         return res.status(200).send({message: "Token de acesso autêntificado"})
     }

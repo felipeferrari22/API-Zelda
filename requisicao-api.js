@@ -1,10 +1,6 @@
-import axios from 'axios';
-
 // URL da API
 
-axios.get('monsters.json')
-    .then(res => console.log(res.data))
-    .catch(err => console.log(err))
+apiUrl = "https://botw-compendium.herokuapp.com/api/v2/category/monsters"
 
 let monsterData = [];
 

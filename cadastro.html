@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Importação de Arquivos de Estilo (CSS) -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Importação de Arquivos de Script (JS) -->
+    <script defer src="cadastro.js"></script>
+    <!-- Tela de Login do Painel Administrativo -->
+    <title>Criar Conta • API Zelda</title>
+</head>
+<body>
+    <!-- Cabeçalho da Página -->
+    <header>Criar Conta</header>
+    <section id="section">
+        <!-- Cabeçalho do Modal -->
+        <form>
+            <!-- Input: E-mail -->
+            <label for="input-criar-conta">E-Mail</label>
+            <input id="input-criar-conta" type="email" min="1">
+            
+            <!-- Input: Senha -->
+            <label for="senha-criar-conta">Senha</label>
+            <input id="senha-criar-conta" type="password">
+            
+            <!-- Input: Confirmação de Senha -->
+            <label for="confirmar-senha-criar-conta">Confirmar senha</label>
+            <input id="confirmar-senha-criar-conta" type="password">
+            
+            <!-- Botão de Criar conta -->
+            <button type="button" id="botao-criar-conta" disabled>Criar</button>
+        </form>
+        <h2>Já possui uma conta?
+            <span id="ir-para-login">Fazer Login</span>
+        </h2>
+</section>
+</body>
+</html>

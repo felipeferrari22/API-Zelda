@@ -1,13 +1,6 @@
 {
-  "dependencies": {
-    "bootstrap": "^5.3.1",
-    "express": "^4.18.2"
-  },
-  "name": "api-zelda",
-  "description": "",
-  "version": "1.0.0",
-  "main": "requisicao-api.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dependencies": {
+      "bootstrap": "^5.3.1"
+    }
   }
-}
+  
